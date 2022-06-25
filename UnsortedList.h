@@ -1,7 +1,8 @@
 #ifndef UNSORTEDLIST_H
 #define UNSORTEDLIST_H
-
 const int MAX_ITEMS = 5;
+
+template<class T>
 
 class UnsortedList
 {
@@ -23,20 +24,20 @@ public:
   // Pre:  List has been initialized.
   // Post: Function value = number of elements in list
 
-  bool Contains(int someItem);
+  bool Contains(T someItem);
   // Function: Determines if someItem is in the list.
   // Pre:  List has been initialized.
   // Post: If there is an element someItem whose key matches
   //       item's key, then the function returns true.
   // 	     otherwise it will return false. List is unchanged.
 
-  void AddItem(int item);
+  void AddItem(T item);
   // Function: Adds item to list.
   // Pre:  List has been initialized.
   //       List is not full.
   // Post: item is in list.
 
-  void DeleteItem(int item);
+  void DeleteItem(T item);
   // Function: Deletes the first element whose key matches item's key.
   // Pre:  ???
   // Post: ???    
@@ -46,7 +47,7 @@ public:
   // Pre:  List has been initialized.
   // Post: Current position is prior to list.
 
-  int GetNextItem();
+  T GetNextItem();
   // Function: Gets the next element in list.
   // Pre:  List has been initialized and has not been changed since last call.
   //       Current position is defined.
@@ -57,7 +58,7 @@ public:
 
 private:
   int length;
-  int arr[MAX_ITEMS];
+  T arr[MAX_ITEMS];
   int currentPos;
 };
 
